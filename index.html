@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="//fononhawwa.com/wp-content/uploads/2021/10/222222.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="//fononhawwa.com/wp-content/uploads/2021/10/222222.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="//fononhawwa.com/wp-content/uploads/2021/10/222222.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="//fononhawwa.com/wp-content/uploads/2021/10/222222.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="//fononhawwa.com/wp-content/uploads/2021/10/222222.png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>فنون حواء || حساب الكبائن</title>
+    </head>
+    <body>
+        
+        <!-- Start head -->
+        <div class="head bg-slate-300 d-flex mx-auto max-w-3xl col-md-4 m-4 rounded-xl items-center shadow-lg">
+            <h3 class="mb-3 text-3xl text-center text-red-600 uppercase">Eve's Arts</h3>
+            <p class="text-lg text-center text-cyan-800"> Cabinets Calculater</p>
+        </div>
+        <!-- End head -->
+        <div class="outputs  bg-zinc-600 mx-auto max-w-3xl px-4 rounded-3xl items-center ">
+            <h3 class="inputs-mian text-2xl p-4 mb-4 text-center text-zinc-50">Inputs</h3>
+        </div>
+        <div class=" inputs-mian crud bg-slate-200 d-flex mx-auto max-w-3xl col-md-4 m-4 rounded-xl items-center shadow-lg">
+            
+            <!-- Start Inputs -->
+            
+                <div class="inputs-mian contract bg-slate-200 mx-auto m-4 rounded-xl items-center ">
+                    <!-- <h3 class="text-2xl text-center text-cyan-800">Inputs</h3> -->
+                    <!-- <form action="" target="_self"> -->
+                        <div class="inputs-mian inputs bg-slate-200 grow flex flex-wrap justify-between mx-auto col-md-2 px-auto p-2 mr-16  ml-16 rounded-xl items-center ">
+                            <input required class="w-full text-center bg-slate-300 p-2 rounded-xl hover:bg-slate-50 focus:bg-slate-50" type="text" id="contractNo" placeholder="contract Number" >
+                        </div>
+                        <!-- class="text-red-600 placeholder-orange-900 text-center flex-grow p-2 bg-transparent mr-4 max-w-92 w-full" -->
+                        <div class="inputs-mian inputs bg-slate-200 grow flex flex-wrap justify-between mx-auto col-md-2 mb-4 p-4 rounded-xl items-center ">
+                            <label class="p-2" for="wallQn">Wall</label>
+                            
+                            <input required type="number" id="wallQn" placeholder="Wall cabinets quantity"
+                            class="wallQn placeholder-center text-cyan-800 placeholder-slate-400 grow text-center p-2 bg-slate-300 rounded-xl hover:bg-slate-50 focus:bg-slate-50">
+                            
+                            <label class="p-2" for="tallQn">Tall</label>
+                            <input required type="number" id="tallQn" placeholder="Tall cabinets quantity"
+                            class="text-cyan-800 placeholder-slate-400 grow text-center p-2 bg-slate-300 rounded-xl hover:bg-slate-50 focus:bg-slate-50">
+                            <label class="p-2" for="baseQn">Base</label>
+                            <input required type="number" id="baseQn" placeholder="Base cabinets quantity"
+                            class="text-cyan-800 placeholder-slate-400 grow text-center p-2 bg-slate-300 rounded-xl hover:bg-slate-50 focus:bg-slate-50">
+                        </div>
+                        <button name="input" id="submit" class="mx-auto text-xl text-red-600 center w-full text-center p-2 bg-slate-200 rounded-2xl block hover:-translate-y-1 transition-all ease-in-out delay-110 duration-300 hover:-scale-80 hover:bg-slate-300">Submit</button>
+                    <!-- </form> -->
+                </div>
+                
+            </div>
+            <!-- End Inputs -->
+            
+            
+            
+            
+            <!-- Start Update -->
+            <div style="display: none" class="update-mian update  bg-slate-200 mx-auto max-w-3xl px-4 m-8 rounded-3xl items-center shadow-xl">
+                <h3 class="text-2xl text-center text-cyan-800">Update Data</h3>
+                <!-- <div class="table bg-slate-200"> -->
+                        <!-- <form action="" target="_self" name="update" method="post"> -->
+                            <table  class="table-update table-auto hover:bg-gray-100 m-4 items-center ontainer mx-auto md:container md:mx-auto px-4 ">
+                                <tr class="text-center uppercase bg-gray-300 ">
+                                <th class="border border-slate-300 p-2">ID</th>
+                                <th class="border border-slate-300 p-2">Name</th>
+                                <th class="border border-slate-300 p-2">Height</th>
+                                <th class="border border-slate-300 p-2">Depth</th>
+                                <th class="border border-slate-300 p-2">Width</th>
+                            </tr>
+                            <tbody id="updateTable">
+                            </tbody>
+                        </table>
+                        
+                        <div class="button ">
+                            <button id="update" name="update" form="update"
+                            class="mx-auto text-xl text-red-600 center w-full text-center p-2 mb-4 bg-slate-200 block hover:-translate-y-1 transition-all ease-in-out delay-110 duration-300 hover:-scale-120 rounded-2xl hover:bg-slate-300">Update</button>
+                        </div>
+                    <!-- </form> -->
+                    </div>
+            <!-- End Outputs -->
+            <!-- Start Outputs -->
+            <div style="display: none" class="outputs-mian  bg-zinc-600 mx-auto max-w-3xl px-4 rounded-3xl items-center ">
+                <h3 class="text-2xl p-4 mb-4 text-center text-zinc-50">Outputs</h3>
+            </div>
+            
+            <div style="display: none" class="outputs-mian outputs  bg-slate-200 mx-auto max-w-3xl px-4  rounded-3xl items-center shadow-xl pb-5">
+                <h3 class="text-2xl text-center text-cyan-800">Cladding - Sides</h3>
+                <!-- <div class="table bg-slate-200"> -->
+                        <table class="outputs-mian table-cladding table-auto hover:bg-gray-100 m-4 items-center ontainer mx-auto md:container md:mx-auto px-4  ">
+                            <tr class="table-header-grpup text-center uppercase bg-gray-300 ">
+                                <th style="display: none" class="border border-slate-300 p-2">ID</th>
+                                <th style="display: none" class="border border-slate-300 p-2">Name</th>
+                                <th class="border border-slate-300 p-2">Height</th>
+                                <th class="border border-slate-300 p-2">Width</th>
+                                <th class="border border-slate-300 p-2">QNT</th>
+                                <th class="border border-slate-300 p-2">Type</th>
+                                <th class="border border-slate-300 p-2">F</th>
+                                <th class="border border-slate-300 p-2">Label</th>
+                            </tr>
+                            <tbody id="claddingSide">
+                        </table>
+                </div>
+                <div style="display: none" class="outputs-mian outputs  bg-slate-200 mx-auto max-w-3xl px-4  rounded-3xl items-center shadow-xl p-5 m-4">
+                    <h3 class="text-2xl text-center text-cyan-800">Cladding - Top & Bottom</h3>
+                    <!-- <div class="table bg-slate-200"> -->
+                    <table
+                        class="table-cladding-tb table-auto hover:bg-gray-100 m-4 items-center ontainer mx-auto md:container md:mx-auto px-4  ">
+                        <tr class="table-header-grpup text-center uppercase bg-gray-300 ">
+                            <th style="display: none" class="border border-slate-300 p-2">ID</th>
+                            <th style="display: none" class="border border-slate-300 p-2">Name</th>
+                            <th class="border border-slate-300 p-2">Height</th>
+                            <th class="border border-slate-300 p-2">Width</th>
+                            <th class="border border-slate-300 p-2">QNT</th>
+                            <th class="border border-slate-300 p-2">Type</th>
+                            <th class="border border-slate-300 p-2">F</th>
+                            <th class="border border-slate-300 p-2">Label</th>
+                        </tr>
+                        <tbody id="table-cladding-tb">
+                    </table>
+                </div>
+                
+                
+                <div style="display: none" class="outputs-mian outputs  bg-slate-200 mx-auto max-w-3xl px-4  rounded-3xl items-center shadow-xl p-5 m-4">
+                    <h3 class="text-2xl text-center text-cyan-800">Cladding - Back</h3>
+                    <!-- <div class="table bg-slate-200"> -->
+                    <table
+                        class="table-cladding-b table-auto hover:bg-gray-100 m-4 items-center ontainer mx-auto md:container md:mx-auto px-4  ">
+                        <tr class="table-header-grpup text-center uppercase bg-gray-300 ">
+                            <th style="display: none" class="border border-slate-300 p-2">ID</th>
+                            <th style="display: none" class="border border-slate-300 p-2">Name</th>
+                            <th class="border border-slate-300 p-2">Height</th>
+                            <th class="border border-slate-300 p-2">Width</th>
+                            <th class="border border-slate-300 p-2">QNT</th>
+                            <th class="border border-slate-300 p-2">Type</th>
+                            <th class="border border-slate-300 p-2">F</th>
+                            <th class="border border-slate-300 p-2">Label</th>
+                        </tr>
+                        <tbody id="table-cladding-b">
+                    </table>
+                </div>
+                
+                <div style="display: none" class="outputs-mian outputs  bg-slate-200 mx-auto max-w-3xl px-4  rounded-3xl items-center shadow-xl p-5 m-4">
+                    <h3 class="text-2xl text-center text-cyan-800">Cladding - Shelf</h3>
+                    <!-- <div class="table bg-slate-200"> -->
+                    <table
+                        class="table-cladding-sh table-auto hover:bg-gray-100 m-4 items-center ontainer mx-auto md:container md:mx-auto px-4  ">
+                        <tr class="table-header-grpup text-center uppercase bg-gray-300 ">
+                            <th style="display: none" class="border border-slate-300 p-2">ID</th>
+                            <th style="display: none" class="border border-slate-300 p-2">Name</th>
+                            <th class="border border-slate-300 p-2">Height</th>
+                            <th class="border border-slate-300 p-2">Width</th>
+                            <th class="border border-slate-300 p-2">QNT</th>
+                            <th class="border border-slate-300 p-2">Type</th>
+                            <th class="border border-slate-300 p-2">F</th>
+                            <th class="border border-slate-300 p-2">Label</th>
+                        </tr>
+                        <tbody id="table-cladding-sh">
+                    </table>
+                </div>
+            <!-- End Outputs -->
+            <div  style="display: none" class="new-data  bg-zinc-600 mx-auto max-w-3xl px-4 rounded-3xl items-center ">
+                <button name="newData" id="newData" class="text-2xl p-4 w-full text-center text-zinc-50" type="submit" >New Data </button>
+                <!-- <h3 id="new-data" class="text-2xl p-4 mb-4 text-center text-zinc-50">New Data</h3> -->
+            </div>
+            <!-- hitwebcounter Code START -->
+            <div class="counter d-none" style="display:none">
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                    <img src="https://hitwebcounter.com/counter/counter.php?page=8004973&style=0006&nbdigits=5&type=page&initCount=0"
+                        title="Free Counter" Alt="web counter" border="0" /></a>
+                </div>
+        <script src="script.js"></script>
+    </body>
+</html>
