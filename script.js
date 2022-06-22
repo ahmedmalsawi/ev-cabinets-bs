@@ -1,5 +1,14 @@
 /** @format */
 
+	hide("tab-acpSide");
+	hide("tab-acpTaB");
+	hide("tab-acpB");
+	hide("tab-acpS");
+	hide("tab-input");
+	hide("tab-newData");
+	hide("tab-update");
+
+
 //Setting Variables
 let contractNo  = document.getElementById("contractNo"),
 	wallQn      = document.getElementById("wallQn"),
@@ -79,10 +88,17 @@ submit.onclick = function () {
 		
 	// clearData();
 	storeData("contracts", contracts);
-	autoHide("inputs-mian", "none");
-	autoHide("update-mian", "");
-	autoHide("outputs-mian", "none");
-	autoHide("new-data", "none");
+	
+	hide("tab-acpSide");
+	hide("tab-acpTaB");
+	hide("tab-acpB");
+	hide("tab-acpS");
+	hide("tab-input");
+	
+	show("tab-update");
+	show("tab-newData");
+	
+	
 	spreadData();
 	};
 	
@@ -116,24 +132,143 @@ function spreadData(){
 // get update values
 update.onclick = function (){ 
 	updateCell();
-	autoHide("inputs-mian", "none");
-	autoHide("update-mian", "none");
-	autoHide("outputs-mian", "");
+	// autoHide("inputs-mian", "none");
+	// autoHide("update-mian", "none");
+	// autoHide("outputs-mian", "");
+	
+	// tabView("tab-update", "remove", "active");
+	// tabView("tab-input", "remove", "active");
+	// tabView("tab-acpSide", "add", "active");
+	// tabView("tab-input", "add", "hide");
+	// tabView("tab-update", "add", "hide");
+	// tabView("tab-acpSide", "remove", "hide");
+	// tabView("tab-acpTaB", "remove", "hide");
+	// tabView("tab-acpB", "remove", "hide");
+	// tabView("tab-acpS", "remove", "hide");
+	// tabView("tab-newData", "remove", "hide");
+		show("tab-acpSide");
+		show("tab-acpTaB");
+		show("tab-acpB");
+		show("tab-acpS");
+
+		hide("tab-input");
+		hide("tab-update");
+		show("tab-newData");
+	
+	
+	
 	spreadCladding();
 	spreadCladdingTB();
 	spreadCladdingB();
 	spreadCladdingSh();
-	autoHide("new-data", "");
 }
 
-newData.onclick = function () {
-	autoHide("inputs-mian", "");
-	autoHide("update-mian", "none");
-	autoHide("outputs-mian", "none");
-	autoHide("new-data", "none");
+let newDataBtn = document.getElementById("tab-newData");
+newDataBtn.addEventListener("click",function () {
+	console.log("Hi");
 	clearData();
-};
+	hide("tab-acpSide");
+	hide("tab-acpTaB");
+	hide("tab-acpB");
+	hide("tab-acpS");
+	hide("tab-update");
+	hide("tab-newData");
+	show("tab-input");
+});
 
+let acpSideBtn = document.getElementById("tab-acpSide");
+let acpTaBBtn = document.getElementById("tab-acpTaB");
+let acpBBtn = document.getElementById("tab-acpB");
+let acpSBtn = document.getElementById("tab-acpS");
+let updateBtn = document.getElementById("tab-update");
+let inputBtn = document.getElementById("tab-input");
+
+acpSideBtn.addEventListener("click", function () {
+	clearData();
+	
+	show("tab-acpSide");
+	hide("tab-acpTaB");
+	hide("tab-acpB");
+	hide("tab-acpS");
+	
+	hide("tab-update");
+	hide("tab-input");
+	show("tab-newData");
+});
+acpTaBBtn.addEventListener("click", function () {
+		clearData();
+
+		hide("tab-acpSide");
+		show("tab-acpTaB");
+		hide("tab-acpB");
+		hide("tab-acpS");
+
+		hide("tab-update");
+		hide("tab-input");
+		show("tab-newData");
+});
+acpBBtn.addEventListener("click", function () {
+		clearData();
+
+		hide("tab-acpSide");
+		hide("tab-acpTaB");
+		show("tab-acpB");
+		hide("tab-acpS");
+
+		hide("tab-update");
+		hide("tab-input");
+		show("tab-newData");
+});
+acpSBtn.addEventListener("click", function () {
+		clearData();
+
+		hide("tab-acpSide");
+		hide("tab-acpTaB");
+		hide("tab-acpB");
+		show("tab-acpS");
+
+		hide("tab-update");
+		hide("tab-input");
+		show("tab-newData");
+});
+updateBtn.addEventListener("click", function () {
+	clearData();
+
+	hide("tab-acpSide");
+	hide("tab-acpTaB");
+	hide("tab-acpB");
+	hide("tab-acpS");
+
+	show("tab-update");
+	hide("tab-input");
+	hide("tab-newData");
+});
+inputBtn.addEventListener("click", function () {
+		clearData();
+
+		hide("tab-acpSide");
+		hide("tab-acpTaB");
+		hide("tab-acpB");
+		hide("tab-acpS");
+
+		hide("tab-update");
+		show("tab-input");
+		hide("tab-newData");
+});
+	
+
+
+
+
+
+$(function () {
+	$("li").click(function () {
+		// remove classes from all
+		$("li").removeClass("active");
+		// add class to the one we clicked
+		$(this).addClass("active");
+	});
+});
 // ==========================================================================================================
 // ============================================ Main Functions ==============================================
 // ==========================================================================================================
@@ -253,10 +388,49 @@ function clearData(){
 	baseQn.value        = '';    
 }
 
-// auto hide by class name
-function autoHide(className,effect){
-	let fileds = document.getElementsByClassName(className);
-	for (let i = 0; i < fileds.length; i++) {
-		fileds[i].style.display = effect;
+// // auto hide by class name
+// function autoHide(className,effect){
+// 	let fileds = document.getElementsByClassName(className);
+// 	for (let i = 0; i < fileds.length; i++) {
+// 		fileds[i].style.display = effect;
+// 	}
+// }
+// // auto hide by class name
+// function autoHide2(className,effect,e="remove"){
+// 	let fileds = document.getElementsByClassName(className);
+	
+// 	if(e === "add"){	
+// 		fileds.classList.add(effect);
+// 	}else{
+// 		fileds.classList.remove(effect);
+// 		}
+// };
+function hide(className) {
+	let divs = document.getElementsByClassName(className);
+	for (let i = 0; i < divs.length; i++) {
+		divs[i].style.display = "none";
 	}
-}
+};
+function show(className) {
+	let divs = document.getElementsByClassName(className);
+	for (let i = 0; i < divs.length; i++) {
+		divs[i].style.display = "";
+	}
+};
+hide("tab-input");
+show("tab-input");
+
+
+
+// auto hide by class name
+// function tabView(tabId,tabAction,tabClass){
+// 	let fileds = document.getElementsByClassName(tabId);
+// 		for (let i = 0; i < fileds.length; i++) {
+// 			if(tabAction === "add"){	
+// 				fileds.classList.add(tabClass);
+// 			}else{
+// 				fileds.classList.remove(tabClass);
+// 			}
+// 	}
+// }
+
