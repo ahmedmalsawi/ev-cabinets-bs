@@ -7,6 +7,10 @@
 	hide("tab-input");
 	hide("tab-newData");
 	hide("tab-update");
+	hide("top-tab-acpSide");
+	hide("top-tab-acpTaB");
+	hide("top-tab-acpB");
+	hide("top-tab-acpS");
 
 
 //Setting Variables
@@ -94,7 +98,10 @@ submit.onclick = function () {
 	hide("tab-acpB");
 	hide("tab-acpS");
 	hide("tab-input");
-	
+	hide("top-tab-acpSide");
+	hide("top-tab-acpTaB");
+	hide("top-tab-acpB");
+	hide("top-tab-acpS");
 	show("tab-update");
 	show("tab-newData");
 	
@@ -112,14 +119,14 @@ function spreadData(){
 		if (cabinets[i].type == "T") {height = 2130;}else{height = 760;}
 		updateTable += `
 		<tr class="text-center">
-            <td class="border border-slate-300">${i + 1}</td>
-            <td class="border border-slate-300"><input type="text" disabled class="text-cyan-800  text-center flex-grow p-2 bg-transparent mr-4 max-w-92 w-full "
+            <td class="">${i + 1}</td>
+            <td class=""><input type="text" disabled class=""
                 id="${cabinets[i].cabinetName}_Name" value=${cabinets[i].cabinetName}></td>
-			<td class="border border-slate-300"><input type="number" required class="text-cyan-800 text-center flex-grow p-2 bg-transparent mr-4 max-w-92 w-full hover:bg-slate-50 focus:bg-slate-50"
+			<td class=""><input type="number" required class=""
 				id="${cabinets[i].cabinetName}_Height" value=${height}></td>
-			<td class="border border-slate-300"><input type="number" required	class="text-cyan-800 text-center flex-grow p-2 bg-transparent mr-4 max-w-92 w-full hover:bg-slate-50 focus:bg-slate-50"
+			<td class=""><input type="number" required	class=""
 				id="${cabinets[i].cabinetName}_Depth" value=${depth} ></td>
-			<td class="border border-slate-300"><input type="number" class="text-cyan-800 text-center flex-grow p-2 bg-transparent mr-4 max-w-92 w-full hover:bg-slate-50 focus:bg-slate-50"
+			<td class=""><input type="number" class=""
 				id="${cabinets[i].cabinetName}_Width" value="0" required></td>
         </tr>
 		`;
@@ -147,9 +154,11 @@ update.onclick = function (){
 	// tabView("tab-acpS", "remove", "hide");
 	// tabView("tab-newData", "remove", "hide");
 		show("tab-acpSide");
-		show("tab-acpTaB");
-		show("tab-acpB");
-		show("tab-acpS");
+		show("top-tab-acpSide");
+		
+		show("top-tab-acpTaB");
+		show("top-tab-acpB");
+		show("top-tab-acpS");
 
 		hide("tab-input");
 		hide("tab-update");
@@ -165,12 +174,15 @@ update.onclick = function (){
 
 let newDataBtn = document.getElementById("tab-newData");
 newDataBtn.addEventListener("click",function () {
-	console.log("Hi");
 	clearData();
 	hide("tab-acpSide");
 	hide("tab-acpTaB");
 	hide("tab-acpB");
 	hide("tab-acpS");
+	hide("top-tab-acpSide");
+	hide("top-tab-acpTaB");
+	hide("top-tab-acpB");
+	hide("top-tab-acpS");
 	hide("tab-update");
 	hide("tab-newData");
 	show("tab-input");
@@ -184,8 +196,6 @@ let updateBtn = document.getElementById("tab-update");
 let inputBtn = document.getElementById("tab-input");
 
 acpSideBtn.addEventListener("click", function () {
-	clearData();
-	
 	show("tab-acpSide");
 	hide("tab-acpTaB");
 	hide("tab-acpB");
@@ -196,8 +206,6 @@ acpSideBtn.addEventListener("click", function () {
 	show("tab-newData");
 });
 acpTaBBtn.addEventListener("click", function () {
-		clearData();
-
 		hide("tab-acpSide");
 		show("tab-acpTaB");
 		hide("tab-acpB");
@@ -208,8 +216,6 @@ acpTaBBtn.addEventListener("click", function () {
 		show("tab-newData");
 });
 acpBBtn.addEventListener("click", function () {
-		clearData();
-
 		hide("tab-acpSide");
 		hide("tab-acpTaB");
 		show("tab-acpB");
@@ -220,8 +226,6 @@ acpBBtn.addEventListener("click", function () {
 		show("tab-newData");
 });
 acpSBtn.addEventListener("click", function () {
-		clearData();
-
 		hide("tab-acpSide");
 		hide("tab-acpTaB");
 		hide("tab-acpB");
@@ -232,8 +236,6 @@ acpSBtn.addEventListener("click", function () {
 		show("tab-newData");
 });
 updateBtn.addEventListener("click", function () {
-	clearData();
-
 	hide("tab-acpSide");
 	hide("tab-acpTaB");
 	hide("tab-acpB");
@@ -244,8 +246,6 @@ updateBtn.addEventListener("click", function () {
 	hide("tab-newData");
 });
 inputBtn.addEventListener("click", function () {
-		clearData();
-
 		hide("tab-acpSide");
 		hide("tab-acpTaB");
 		hide("tab-acpB");
@@ -294,14 +294,14 @@ function spreadCladding() {
 	for (let i = 0; i < Object.keys(contracts[0]["cabinets"]).length; i++) {
 		updateTable += `
 		<tr class="text-center">
-            <td style="display: none" class="border border-slate-300"   >${i + 1}</td>
-            <td style="display: none" class="border border-slate-300"   >${cabinets[i].cabinetName}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingSideHeight()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingSideWidth()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingSideQn}</td>
-			<th class="border border-slate-300"                         >K</th>
-            <th class="border border-slate-300"                         ></th>
-			<td class="border border-slate-300"                         >${cabinets[i].cabinetName}_Side_${contracts[0].contractNo}</td>
+            <td style="display: none" class=""   >${i + 1}</td>
+            <td style="display: none" class=""   >${cabinets[i].cabinetName}</td>
+			<td class=""                         >${cabinets[i].claddingSideHeight()}</td>
+			<td class=""                         >${cabinets[i].claddingSideWidth()}</td>
+			<td class=""                         >${cabinets[i].claddingSideQn}</td>
+			<th class=""                         >K</th>
+            <th class=""                         ></th>
+			<td class=""                         >${cabinets[i].cabinetName}_Side_${contracts[0].contractNo}</td>
         </tr>
 		`;
 	}
@@ -315,14 +315,14 @@ function spreadCladding() {
 	for (let i = 0; i < Object.keys(contracts[0]["cabinets"]).length; i++) {
 		updateTable += `
 		<tr class="text-center">
-            <td style="display: none" class="border border-slate-300"   >${i + 1}</td>
-            <td style="display: none" class="border border-slate-300"   >${cabinets[i].cabinetName}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingTaBHeight()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingTaBWidth()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingTaBQn()}</td>
-			<th class="border border-slate-300"                         >K</th>
-            <th class="border border-slate-300"                         ></th>
-			<td class="border border-slate-300"                         >${cabinets[i].cabinetName}_Side_${contracts[0].contractNo}</td>
+            <td style="display: none" class=""   >${i + 1}</td>
+            <td style="display: none" class=""   >${cabinets[i].cabinetName}</td>
+			<td class=""                         >${cabinets[i].claddingTaBHeight()}</td>
+			<td class=""                         >${cabinets[i].claddingTaBWidth()}</td>
+			<td class=""                         >${cabinets[i].claddingTaBQn()}</td>
+			<th class=""                         >K</th>
+            <th class=""                         ></th>
+			<td class=""                         >${cabinets[i].cabinetName}_T&B_${contracts[0].contractNo}</td>
         </tr>
 		`;
 	}
@@ -335,14 +335,14 @@ function spreadCladdingB() {
 	for (let i = 0; i < Object.keys(contracts[0]["cabinets"]).length; i++) {
 		updateTable += `
 		<tr class="text-center">
-            <td style="display: none" class="border border-slate-300"   >${i + 1}</td>
-            <td style="display: none" class="border border-slate-300"   >${cabinets[i].cabinetName}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingBackHeight()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingBackWidth()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingBackQn}</td>
-			<th class="border border-slate-300"                         >K</th>
-            <th class="border border-slate-300"                         ></th>
-			<td class="border border-slate-300"                         >${cabinets[i].cabinetName}_Side_${contracts[0].contractNo}</td>
+            <td style="display: none" class=""   >${i + 1}</td>
+            <td style="display: none" class=""   >${cabinets[i].cabinetName}</td>
+			<td class=""                         >${cabinets[i].claddingBackHeight()}</td>
+			<td class=""                         >${cabinets[i].claddingBackWidth()}</td>
+			<td class=""                         >${cabinets[i].claddingBackQn}</td>
+			<th class=""                         >K</th>
+            <th class=""                         ></th>
+			<td class=""                         >${cabinets[i].cabinetName}_Back_${contracts[0].contractNo}</td>
         </tr>
 		`;
 	}
@@ -355,14 +355,14 @@ function spreadCladdingSh() {
 	for (let i = 0; i < Object.keys(contracts[0]["cabinets"]).length; i++) {
 		updateTable += `
 		<tr class="text-center">
-            <td style="display: none" class="border border-slate-300"   >${i + 1}</td>
-            <td style="display: none" class="border border-slate-300"   >${cabinets[i].cabinetName}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingShelfHeight()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingShelfWidth()}</td>
-			<td class="border border-slate-300"                         >${cabinets[i].claddingShelfQn}</td>
-			<th class="border border-slate-300"                         >R</th>
-            <th class="border border-slate-300"                         ></th>
-			<td class="border border-slate-300"                         >${cabinets[i].cabinetName}_Side_${contracts[0].contractNo}</td>
+            <td style="display: none" class=""   >${i + 1}</td>
+            <td style="display: none" class=""   >${cabinets[i].cabinetName}</td>
+			<td class=""                         >${cabinets[i].claddingShelfHeight()}</td>
+			<td class=""                         >${cabinets[i].claddingShelfWidth()}</td>
+			<td class=""                         >${cabinets[i].claddingShelfQn}</td>
+			<th class=""                         >R</th>
+            <th class=""                         ></th>
+			<td class=""                         >${cabinets[i].cabinetName}_Shelf_${contracts[0].contractNo}</td>
         </tr>
 		`;
 	}
