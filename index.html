@@ -28,18 +28,19 @@
     <p class="head fs-3 w-100 text-center"> Cabinets Calculater</p>
     <!-- End head -->
     
+    
     <!-- Start Inputs -->
     <div class="inputs-mian container">
         <input required class="btn btn-input w-100" type="text" id="contractNo" placeholder="contract Number">
         <div class="nav-tabs">
             <ul class="nav nav-tabs text-center align-items-lg-center">
-                <li id="tab-newData"    class="nav-item tab-newData" ><a class="nav-link " href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                <li id="tab-input"      class="nav-item tab-input active" ><a class="nav-link "   href="#">QNT</a></li>
-                <li id="tab-update"     class="nav-item tab-update" ><a class="nav-link " href="#">Update</a></li>
-                <li id="tab-acpSide"    class="nav-item tab-acpSide"><a class="nav-link " href="#">ACP Sides</a></li>
-                <li id="tab-acpTaB"     class="nav-item tab-acpTaB" ><a class="nav-link " href="#">ACP T & B</a></li>
-                <li id="tab-acpB"       class="nav-item tab-acpB"   ><a class="nav-link " href="#">ACP Back</a></li>
-                <li id="tab-acpS"       class="nav-item tab-acpS"   ><a class="nav-link " href="#">ACP Shelf</a></li>
+                <li id="tab-newData"    class="nav-item tab-newData " ><a class="nav-link " href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                <li id="tab-input"      class="nav-item tab-input   active" ><a class="nav-link "   href="#">QNT</a></li>
+                <li id="tab-update"     class="nav-item tab-update  " ><a class="nav-link " href="#">Update</a></li>
+                <li id="tab-acpSide"    class="nav-item top-tab-acpSide"><a class="nav-link " href="#">ACP Sides</a></li>
+                <li id="tab-acpTaB"     class="nav-item top-tab-acpTaB " ><a class="nav-link " href="#">ACP T & B</a></li>
+                <li id="tab-acpB"       class="nav-item top-tab-acpB   "   ><a class="nav-link " href="#">ACP Back</a></li>
+                <li id="tab-acpS"       class="nav-item top-tab-acpS   "   ><a class="nav-link " href="#">ACP Shelf</a></li>
             </ul>
         </div>
         <div id="tab-input"class="container input-div tab-input">
@@ -61,14 +62,16 @@
     <!-- End Inputs -->
     <!-- Start Update -->
     <div id="update-div" class="tab-update update ">
-        <table  class="table-update ">
-            <tr class="">
-                <th class="">ID</th>
-                <th class="">Name</th>
-                <th class="">Height</th>
-                <th class="">Depth</th>
-                <th class="">Width</th>
-            </tr>
+        <table  class="table-update table table-light">
+            <thead>
+                <tr class="">
+                    <th scope="col" class="">ID</th>
+                    <th scope="col" class="">Name</th>
+                    <th scope="col" class="">Height</th>
+                    <th scope="col" class="">Depth</th>
+                    <th scope="col" class="">Width</th>
+                </tr>
+            </thead>
             <tbody id="updateTable">
             </tbody>
         </table>
@@ -78,7 +81,8 @@
     <!-- End Updates -->
     <!-- Start ACP-Sides -->
     <div id="ACP-Sides" class="tab-acpSide outputs">
-        <table class="outputs-mian table-cladding ">
+        <table class="outputs-mian table-cladding table table-light">
+        <thead>
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -89,14 +93,16 @@
                 <th class="">F</th>
                 <th class="">Label</th>
             </tr>
+        </thead>
             <tbody id="claddingSide">
             </tbody>
         </table>
     </div>
     <!-- End ACP-Sides -->
     <!-- Start ACP-TaB -->
-    <div id="ACP-TaB" class="tab-acpTaB outputs ">
-        <table class="table-cladding-tb ">
+    <div id="ACP-TaB" class="tab-acpTaB tab-acpTaB-outputs">
+        <table class="table-cladding-tb  table table-light">
+        <thead>
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -107,14 +113,16 @@
                 <th class="">F</th>
                 <th class="">Label</th>
             </tr>
+        </thead>
             <tbody id="table-cladding-tb">
             </tbody>
         </table>
     </div>
     <!-- End ACP-TaB -->
     <!-- Start ACP-B -->
-    <div id="ACP-Back" class="tab-acpB outputs  ">
-        <table class="table-cladding-b ">
+    <div id="ACP-Back" class="tab-acpB tab-acpB-outputs ">
+        <table class="table-cladding-b  table table-light">
+        <thead>
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -125,14 +133,16 @@
                 <th class="">F</th>
                 <th class="">Label</th>
             </tr>
+        </thead>
             <tbody id="table-cladding-b">
             </tbody>
         </table>
     </div>
-    <!-- End ACP-TaB -->
-    <!-- Start ACP-TaB -->
-    <div  class="tab-acpS outputs ">
-        <table class="table-cladding-sh  ">
+    <!-- End ACP-B -->
+    <!-- Start ACP-S -->
+    <div  id="ACP-S" class="tab-acpS tab-acpS-outputs ">
+        <table class="table-cladding-sh table table-light">
+        <thead>
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -143,8 +153,9 @@
                 <th class="">F</th>
                 <th class="">Label</th>
             </tr>
-            <tbody id="table-cladding-sh">
-            </tbody>
+        </thead>
+        <tbody id="table-cladding-sh">
+        </tbody>
         </table>
     </div>
     <!-- End Outputs -->
