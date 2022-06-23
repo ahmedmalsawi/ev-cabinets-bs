@@ -107,6 +107,7 @@ submit.onclick = function () {
 	
 	
 	spreadData();
+	contractNo.classList.add("disabled");
 	};
 	
 // spread data
@@ -120,14 +121,10 @@ function spreadData(){
 		updateTable += `
 		<tr class="text-center">
             <td class="">${i + 1}</td>
-            <td class=""><input type="text" disabled class=""
-                id="${cabinets[i].cabinetName}_Name" value=${cabinets[i].cabinetName}></td>
-			<td class=""><input type="number" required class=""
-				id="${cabinets[i].cabinetName}_Height" value=${height}></td>
-			<td class=""><input type="number" required	class=""
-				id="${cabinets[i].cabinetName}_Depth" value=${depth} ></td>
-			<td class=""><input type="number" class=""
-				id="${cabinets[i].cabinetName}_Width" value="0" required></td>
+            <td class="text-center"  id="${cabinets[i].cabinetName}_Name">${cabinets[i].cabinetName}</td>
+			<td class=""><input type="number" required  class="form-control text-center"	id="${cabinets[i].cabinetName}_Height" value=${height}></td>
+			<td class=""><input type="number" required	class="form-control text-center" id="${cabinets[i].cabinetName}_Depth" value=${depth} ></td>
+			<td class=""><input type="number" class="form-control text-center"	id="${cabinets[i].cabinetName}_Width" value="0" required></td>
         </tr>
 		`;
 	}
@@ -186,6 +183,7 @@ newDataBtn.addEventListener("click",function () {
 	hide("tab-update");
 	hide("tab-newData");
 	show("tab-input");
+	contractNo.classList.remove("disabled");
 });
 
 let acpSideBtn = document.getElementById("tab-acpSide");

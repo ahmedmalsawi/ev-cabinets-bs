@@ -31,7 +31,7 @@
     
     <!-- Start Inputs -->
     <div class="inputs-mian container">
-        <input required class="btn btn-input w-100" type="text" id="contractNo" placeholder="contract Number">
+        <input required class="form-control text-center btn " type="text" id="contractNo" placeholder="contract Number">
         <div class="nav-tabs">
             <ul class="nav nav-tabs text-center align-items-lg-center">
                 <li id="tab-newData"    class="nav-item tab-newData " ><a class="nav-link " href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
@@ -51,20 +51,23 @@
                 <span class="col">Base Qnt</span>
             </div>
             <!-- Values -->
-            <div class="container row d-flex justify-content-center text-center mb-2">
-                <input class="wallQn col btn btn-input" type="number" id="wallQn" placeholder="Wall cabinets quantity" required>
-                <input class="tallQn col btn btn-input"  type="number" id="tallQn" placeholder="Tall cabinets quantity" required>
-                <input class="baseQn col btn btn-input"  type="number" id="baseQn" placeholder="Base cabinets quantity" required>
+            <div class="container row d-flex justify-content-center text-center mb-2 form-control mt-1
+            ">
+               
+                <input class="wallQn col form-control text-center m-2" type="number" id="wallQn" placeholder="Wall cabinets quantity" required>
+                <input class="tallQn col form-control text-center m-2"  type="number" id="tallQn" placeholder="Tall cabinets quantity" required>
+                <input class="baseQn col form-control text-center m-2"  type="number" id="baseQn" placeholder="Base cabinets quantity" required>
             </div>
             <button name="input" id="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
     <!-- End Inputs -->
     <!-- Start Update -->
-    <div id="update-div" class="tab-update update ">
-        <table  class="table-update table table-light">
-            <thead>
-                <tr class="">
+    <div id="update-div" class="tab-update update form-control mt-1 text-center">
+        <h3 class="text-center text-black">Update Values</h3>
+        <table  class="table-update table table-light text-center">
+            <thead class="table-dark text-center">
+                <tr class="text-center">
                     <th scope="col" class="">ID</th>
                     <th scope="col" class="">Name</th>
                     <th scope="col" class="">Height</th>
@@ -80,9 +83,10 @@
     </div>
     <!-- End Updates -->
     <!-- Start ACP-Sides -->
-    <div id="ACP-Sides" class="tab-acpSide outputs">
+    <div id="ACP-Sides" class="tab-acpSide outputs form-control mt-1">
+    <h3 class="text-center text-black">ACP-Sides</h3>
         <table class="outputs-mian table-cladding table table-light">
-        <thead>
+        <thead class="table-dark text-center">
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -100,9 +104,10 @@
     </div>
     <!-- End ACP-Sides -->
     <!-- Start ACP-TaB -->
-    <div id="ACP-TaB" class="tab-acpTaB tab-acpTaB-outputs">
+    <div id="ACP-TaB" class="tab-acpTaB tab-acpTaB-outputs form-control mt-1">
+        <h3 class="text-center text-black">ACP-Top & Bottom</h3>
         <table class="table-cladding-tb  table table-light">
-        <thead>
+        <thead class="table-dark text-center">
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -120,9 +125,10 @@
     </div>
     <!-- End ACP-TaB -->
     <!-- Start ACP-B -->
-    <div id="ACP-Back" class="tab-acpB tab-acpB-outputs ">
-        <table class="table-cladding-b  table table-light">
-        <thead>
+    <div id="ACP-Back" class="tab-acpB tab-acpB-outputs form-control mt-1">
+        <h3 class="text-center text-black">ACP-Back</h3>
+        <table class="table-cladding-b table table-light">
+        <thead class="table-dark text-center">
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>
@@ -140,9 +146,10 @@
     </div>
     <!-- End ACP-B -->
     <!-- Start ACP-S -->
-    <div  id="ACP-S" class="tab-acpS tab-acpS-outputs ">
+    <div  id="ACP-S" class="tab-acpS tab-acpS-outputs form-control mt-1">
+        <h3 class="text-center text-black">ACP-Shelf</h3>
         <table class="table-cladding-sh table table-light">
-        <thead>
+        <thead class="table-dark text-center">
             <tr class="">
                 <th style="display: none" class="">ID</th>
                 <th style="display: none" class="">Name</th>

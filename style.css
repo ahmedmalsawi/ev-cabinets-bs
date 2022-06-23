@@ -47,3 +47,11 @@ justify-content: center;
     background-color: var(--primary9)!important;
 }
 
+/* #contractNo::before{
+content:"ContractNo.";
+font-size:140px;
+top:100px;
+left:100px;
+color:#BD2939;
+
+} */
