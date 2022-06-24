@@ -35,13 +35,13 @@ color:var(--primary8);
     color:var(--primary10);
 }
 
-#contractNo{
+/* #contractNo{
 margin-bottom: 20px;
 max-width: 50%;
 margin-left:25%;
 align-self: center;
 justify-content: center;
-}
+} */
 .nav-link.active{
     color: var(--primar10)!important;
     background-color: var(--primary9)!important;

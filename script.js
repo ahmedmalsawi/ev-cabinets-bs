@@ -432,3 +432,13 @@ show("tab-input");
 // 	}
 // }
 
+// change header by adding contract number
+let head = document.getElementById('head');
+contractNo.addEventListener('change',function(){
+	if(contractNo.value > 0){
+		head.innerHTML ="Cabinets Calculater";
+	}else{
+		head.innerHTML = contractNo.value + " - Cabinets Calculater";
+	}
+
+})
